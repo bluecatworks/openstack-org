@@ -60,6 +60,8 @@ SummitAttendee:
 SummitEvent:
   extensions:
     - SummitEntity
+    - OpenGraphObjectExtension
+    - SummitOpenGraphExtension
 SummitEventFeedback:
   extensions:
     - SummitEntity
@@ -90,6 +92,9 @@ SummitLocationImage:
 SummitVenueFloor:
   extensions:
     - SummitEntity
+SummitPage:
+  extensions:
+    - SummitOpenGraphExtension
 Injector:
     RSVPTextBoxUIBuilder:
       class: RSVPTextBoxQuestionTemplateUIBuilder

@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" $OGNS>
 
 <head>
     <% include Head %>
+    $MetaTags(false)
     <% include Analytics %>
     $FBTrackingCode
     $TwitterTrackingCode

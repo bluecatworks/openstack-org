@@ -5,6 +5,14 @@
  */
 class SummitAppSchedPage extends SummitPage
 {
+    public function MetaTags($includeTitle = true)
+    {
+        if (Controller::curr() instanceof SummitAppSchedPage_Controller && 
+            ($event = Controller::curr()->getSelectedEvent())) {
+            return $event->MetaTags($includeTitle);
+        }
+        return parent::MetaTags($includeTitle);
+    }
 }
 
 /**
@@ -126,11 +134,16 @@ class SummitAppSchedPage_Controller extends SummitPage_Controller
 
     }
 
+	public function getSelectedEvent()
+	{
+		$event_id = intval($this->request->param('EVENT_ID'));
+		$event = $this->event_repository->getById($event_id);
+		return $event;
+	}
+
     public function ViewEvent()
     {
-        $event_id = intval($this->request->param('EVENT_ID'));
-        $this->event_id = $event_id;
-        $event = $this->event_repository->getById($event_id);
+        $event = $this->getSelectedEvent();
         $goback = $this->getRequest()->postVar('goback') ? $this->getRequest()->postVar('goback') : '';
 
         if (is_null($event) || !$event->isPublished()) {

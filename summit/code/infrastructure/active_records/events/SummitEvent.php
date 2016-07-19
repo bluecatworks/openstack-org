@@ -89,6 +89,18 @@ class SummitEvent extends DataObject implements ISummitEvent
         return html_entity_decode($this->getField('Title'));
     }
 
+    public function AbsoluteLink($action = 'show')
+    {
+        return $this->getLink();
+    }
+
+    public function MetaTags($includeTitle = true)
+    {
+        $tags = "";
+        $this->extend('MetaTags', $tags);
+        return $tags;
+    }
+    
     public function getRSVPLink()
     {
         return html_entity_decode($this->getField('RSVPLink'));
