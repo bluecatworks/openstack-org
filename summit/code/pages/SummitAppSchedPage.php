@@ -165,7 +165,6 @@ class SummitAppSchedPage_Controller extends SummitPage_Controller
             array('SummitAppEventPage', 'SummitPage', 'Page'),
             array(
                 'Event' => $event,
-                'FB_APP_ID' => FB_APP_ID,
                 'goback' => $goback,
                 'Token' => $token
             ));

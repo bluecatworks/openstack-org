@@ -135,11 +135,8 @@
                     var share_info =
                     {
                         event_id: {$Event.ID},
-                        url: "{$AbsoluteLink}events/{$Event.ID}",
-                        title : "{$Event.Title.JS}",
-                        description: "{$Event.ShortDescription().JS}",
-                        image: "/themes/openstack/images/openstack-logo-full.png",
-                        fb_app_id : {$FB_APP_ID},
+                        url: "{$Event.AbsoluteLink}",
+                        fb_app_id : {$SiteConfig.getOGApplicationID()},
                         token: "{$Token}"
                     };
                 </script>

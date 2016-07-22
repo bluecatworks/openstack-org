@@ -61,7 +61,7 @@ SummitEvent:
   extensions:
     - SummitEntity
     - OpenGraphObjectExtension
-    - SummitOpenGraphExtension
+    - SummitEventOpenGraphExtension
 SummitEventFeedback:
   extensions:
     - SummitEntity
